@@ -57,12 +57,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Views\LoginView.xaml.cs" />
+		<MauiXaml Update="Views\LoginView.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <MauiXaml Remove="Views\LoginView.xaml" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
