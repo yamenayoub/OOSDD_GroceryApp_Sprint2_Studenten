@@ -62,24 +62,24 @@ namespace Grocery.App.ViewModels
         public void AddProduct(Product product)
         {
             //Controleer of het product bestaat en dat de Id > 0
-            //if (product != null && product.Id > 0)
-            //{
-            //    //Maak een GroceryListItem met Id 0 en vul de juiste productid en grocerylistid
-            //    GroceryListItem newItem = new (0, GroceryList.Id, product.Id, product.Stock);
+            if (product != null && product.Id > 0)
+            {
+                //Maak een GroceryListItem met Id 0 en vul de juiste productid en grocerylistid
+                GroceryListItem newItem = new(0, GroceryList.Id, product.Id, 1);
 
-            //    //Voeg het GroceryListItem toe aan de dataset middels de _groceryListItemsService
-            //    _groceryListItemsService.Add(newItem);
+                //Voeg het GroceryListItem toe aan de dataset middels de _groceryListItemsService
+                _groceryListItemsService.Add(newItem);
 
-            //    // hier wordt de voorraad met 1 verminderd, omdat het wordt toegevoegd aan de boodschappenlijst.
-            //    //Werk de voorraad (Stock) van het product bij en zorg dat deze wordt vastgelegd (middels _productService)
-            //    _productService.Update(product).Stock = product.Stock - 1;
+                // hier wordt de voorraad met 1 verminderd, omdat het wordt toegevoegd aan de boodschappenlijst.
+                //Werk de voorraad (Stock) van het product bij en zorg dat deze wordt vastgelegd (middels _productService)
+                _productService.Update(product).Stock = product.Stock - 1;
 
-            //    //Werk de lijst AvailableProducts bij, want dit product is niet meer beschikbaar
-            //    AvailableProducts.Remove(product);
+                //Werk de lijst AvailableProducts bij, want dit product is niet meer beschikbaar
+                AvailableProducts.Remove(product);
 
-            //    //call OnGroceryListChanged(GroceryList);
-            //    OnGroceryListChanged(GroceryList);
-            //}
+                //call OnGroceryListChanged(GroceryList);
+                OnGroceryListChanged(GroceryList);
+            }
         }
     }
 }
