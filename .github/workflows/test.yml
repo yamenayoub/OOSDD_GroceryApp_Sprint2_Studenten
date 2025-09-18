@@ -20,13 +20,13 @@ jobs:
              dotnet-version: 8.0.x
  
       - name: Installeer MAUI workloads
-        run: dotnet workload install maui maui-android maui-ios maui-maccatalyst maui-windows
+        run: dotnet workload install maui
  
       - name: Herstel afhankelijkheden
         run: dotnet restore
  
       - name: Bouw de applicatie
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build --configuration Release -f net8.0-windows10.0.19041.0 /p:RuntimeIdentifierOverride=win-x64
  
       - name: Voer unit tests uit
         run: dotnet test --configuration Release --no-restore --no-build --verbosity normal
