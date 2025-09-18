@@ -56,13 +56,13 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Compile Remove="Views\LoginView.xaml.cs" />
-	</ItemGroup>
+<!--	<ItemGroup>-->
+<!--	  <Compile Remove="Views\LoginView.xaml.cs" />-->
+<!--	</ItemGroup>-->
 
-	<ItemGroup>
-	  <MauiXaml Remove="Views\LoginView.xaml" />
-	</ItemGroup>
+<!--	<ItemGroup>-->
+<!--	  <MauiXaml Remove="Views\LoginView.xaml" />-->
+<!--	</ItemGroup>-->
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
@@ -96,5 +96,11 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>
+
+    <ItemGroup>
+        <MauiXaml Update="Views\LoginView.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </MauiXaml>
+    </ItemGroup>
 
 </Project>
