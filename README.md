@@ -32,3 +32,19 @@ De opdracht is om zelfstandig de login functionaliteit te laten werken.
 7. In App.xaml.cs staat //MainPage = new LoginView(viewModel); Haal hier de // weg en zet de regel erboven in commentaar, zodat AppShell wordt uitgeschakeld.  
 8. Uncomment de route naar het Login scherm in AppShell.xaml.cs: //Routing.RegisterRoute("Login", typeof(LoginView)); 
 
+### GitFlow
+#### Branch structuur
+
+- main: Bevat de stabiele en productieklare code. Alleen release en hotfix branches mogen hierin mergen.
+
+- develop: Hier wordt actief ontwikkeld. Nieuwe features worden hier samengevoegd voordat ze naar main gaan.
+
+- feature/*: Voor nieuwe functionaliteiten. Voorbeeld: feature/UC<nummer>-login-systeem
+
+- release/* : Voor release-voorbereidingen (bugfixes, documentatie, kleine verbeteringen). Voorbeeld: release/v1.0.0
+
+- hotfix/*: Voor directe bugfixes op productie. Voorbeeld: hotfix/fix-crash
+
+#### Regels voor commits & PR’s
+
+- Gebruik duidelijke commit messages Nederlands.
